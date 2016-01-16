@@ -24,7 +24,7 @@ The code can be run locally on your development machine or can easily be pushed 
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.ibm.com/uwefassnacht/device-simulator-for-ibm-iot)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/uwefassnacht/device-simulator-for-ibm-iot)
 
 
 ## Getting Started
