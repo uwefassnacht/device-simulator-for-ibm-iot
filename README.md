@@ -2,25 +2,25 @@
 
 What if you're building or testing Internet of Things (IoT) solutions based on the [IBM IoT Foundation][iotf_url] service ... but don't have an actual device to connect to it? Even if you have a device, maybe you'd like it to emit specific types and patterns of data?
 
-This is a heavily commented node.js application, that acts as a "fake device" that connects to the IBM IoT Foundation service and emits data. The emitted data can easily be controlled via a few lines of code.
+This is a heavily commented node.js application, that acts as a "fake device", connects to the IBM IoT Foundation service and emits data. The emitted data can easily be controlled via a few lines of code.
 
-The code can run locally on your development machine or can easily be pushed to IBM's Cloud Foundry based [Bluemix][bluemix_url] platform.
+The code can be run locally on your development machine or can easily be pushed to IBM's Cloud Foundry based [Bluemix][bluemix_url] platform.
 
 ## Registering the simulator in the IoT Foundation service
 
-Note that this simulated device can only connect to your instance of the IoT Foundation service if it has been registered. This can either be done via the IoT Foundation dashboard or its API.
+**Note** that this simulated device **can only connect to your instance of the IoT Foundation service if it has been registered**. This can either be done via the IoT Foundation dashboard or its API.
 
 # Running the application locally
 
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
 
 2. Install [Node.js](http://nodejs.org/)
-3. Go to the project folder in a terminal and run:
+3. Go to the project folder in the terminal and run:
     `npm install`
 4. Start the application
-5.  `node app.js`# Running on Bluemix
+5.  `node app.js`
 
-# Running the application on Bluemix
+# Deploying and running the application on Bluemix
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
@@ -78,3 +78,4 @@ Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
 
 [bluemix_url]: https://bluemix.net
 [iotf_url]: https://console.ng.bluemix.net/catalog/services/internet-of-things-foundation
+[sign_up]: https://console.ng.bluemix.net/registration/
