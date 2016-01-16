@@ -1,10 +1,14 @@
 # device-simulator-for-ibm-iot Overview
 
-What if you're building or testing Internet of Things (IoT) solutions based on the [IBM IoT Foundation][iotf_url] service ... but don't have an actual device handy to connect to it? Even if you have a device, maybe you'd like it to emit specific types and patterns of data? Maybe a sine wave, random values or even disconnect at random times?
+What if you're building or testing Internet of Things (IoT) solutions based on the [IBM IoT Foundation][iotf_url] service ... but don't have an actual device to connect to it? Even if you have a device, maybe you'd like it to emit specific types and patterns of data?
 
-This is a heavily commented node.js application, that acts as a "fake device" that connects to the IBM IoT Foundation service and emits data. The emitted data can easily be controlled via a few variables.
+This is a heavily commented node.js application, that acts as a "fake device" that connects to the IBM IoT Foundation service and emits data. The emitted data can easily be controlled via a lines of code.
 
 The code can run locally on your development machine or can easily be pushed to IBM's Cloud Foundry based [Bluemix][bluemix_url] platform.
+
+# Registering the simulator in the IoT Foundation service
+
+Note that this simulated device can only connect to your instance of the IoT Foundation service if it has been registered. This can either be done via the IoT Foundation dashboard or its API.
 
 # Deploying the code
 

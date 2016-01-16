@@ -2,14 +2,14 @@
   "name": "device-simulator-for-ibm-iot-starter-kit",
   "version": "0.0.1",
   "main": "app.js",
-  "description": "A small utily that acts a sensor and sends data into the IBM IoT Foundation service. Very useful for debugging and demoing Internet of Things (IoT) solutions built on IBM Bluemix",
+  "description": "A small utility that acts a sensor and sends data into the IBM IoT Foundation service. Very useful for debugging and demoing Internet of Things (IoT) solutions built on IBM Bluemix",
   "license": "Apache License, Version 2.0",
   "dependencies": {
     "async": "^1.5.2",
     "cfenv": "^1.0.3",
-    "cloudant": "^1.4.0",
     "dotenv": "^1.2.0",
-    "ibmiotf": "^0.2.2",
+    "express": "^4.13.3",
+    "ibmiotf": "^0.2.2"
   },
   "keywords": [
     "node",

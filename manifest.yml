@@ -1,23 +1,11 @@
 ---
-declared-services:
-  my-cloudant-db:
-    label: cloudantNoSQLDB
-    plan: Shared
-  my-iotf-service:
-    label: iotf-service
-    plan: iotf-service-free
-
 applications:
 - path: .
   memory: 256M
   instances: 1
   domain: mybluemix.net
-  name: iot-starter-kit
-  host: iot-starter-kit
+  name: device-simulator-for-ibm-iot
+  host: device-simulator-for-ibm-iot
   disk_quota: 1024M
   command: node app.js
   buildpack: sdk-for-nodejs
-
-services:
-   - my-cloudant-db
-   - my-iotf-service
