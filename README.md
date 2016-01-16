@@ -9,6 +9,7 @@ This is a heavily commented node.js application, that acts as a "fake device", c
 
 **Note** that this simulated device **can only connect to your instance of the IoT Foundation service if it has been registered**. This can either be done via the IoT Foundation dashboard or its API.
 
+
 # Running the application locally
 
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
@@ -17,7 +18,7 @@ This is a heavily commented node.js application, that acts as a "fake device", c
 3. Go to the project folder in the terminal and run:
     `npm install`
 4. Add a .env file with the name of the IoT Foundation org you would like to connect to:
-    ``<iotFoundationOrgNameGoesHere>``
+    ``echo "<iotFoundationOrgNameGoesHere>" > .env``
    Or (alternatively) add the name of the org directly in the code (app.js file)
 5. Start the application
 6.  `node app.js`
