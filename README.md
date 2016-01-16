@@ -45,13 +45,7 @@ Give it a try! Click the button below to fork into IBM DevOps Services and deplo
   $ cf login -u <your user ID>
   ```
 
-5. Create the Personality Insights service in Bluemix
-
-  ```sh
-  $ cf create-service personality_insights tiered personality-insights-tutorial
-  ```
-
-6. Push it live!
+5. Push it live!
 
   ```sh
   $ cf push
@@ -61,7 +55,7 @@ See the full [Getting Started][getting_started] documentation for more details, 
 
 ## Troubleshooting
 
-To troubleshoot your Bluemix app the main useful source of information are the logs, to see them, run:
+To troubleshoot your Bluemix app the sources of information are the logs, to see them, run:
 
   ```sh
   $ cf logs <application-name> --recent
@@ -79,3 +73,4 @@ Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
 [bluemix_url]: https://bluemix.net
 [iotf_url]: https://console.ng.bluemix.net/catalog/services/internet-of-things-foundation
 [sign_up]: https://console.ng.bluemix.net/registration/
+[cloud_foundry]: https://github.com/cloudfoundry/cli
