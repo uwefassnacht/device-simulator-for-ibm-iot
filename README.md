@@ -7,7 +7,7 @@ This is a heavily commented node.js application, that acts as a "fake device", c
 
 ### Registering the simulator in the IoT Foundation service
 
-**Note** that this simulated device **can only connect to your instance of the IoT Foundation service if it has been registered**. This can either be done via the IoT Foundation dashboard or its API.
+**Note** that this simulated device **can only connect to your instance of the IoT Foundation service if it has been registered**. This can either be done via the IoT Foundation dashboard or [its API][iotf_api].
 
 
 ## Running the application locally
@@ -17,7 +17,7 @@ This is a heavily commented node.js application, that acts as a "fake device", c
 2. Install [Node.js](http://nodejs.org/)
 3. Go to the project folder in the terminal and run:
     `npm install`
-4. Generate an .env file with the name of the IoT Foundation org you would like to connect to:
+4. Generate an .env file with the name of the IoT Foundation organization, that you would like to connect to:
 ``echo "<iotFoundationOrgNameGoesHere>" > .env``
 5. Start the application
 6.  `node app.js`
@@ -47,3 +47,4 @@ Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
 [iotf_url]: https://console.ng.bluemix.net/catalog/services/internet-of-things-foundation
 [sign_up]: https://console.ng.bluemix.net/registration/
 [cloud_foundry]: https://github.com/cloudfoundry/cli
+[iotf_api]:https://developer.ibm.com/iotfoundation/recipes/api-documentation/
