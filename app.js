@@ -11,6 +11,23 @@ var varIntervalBetweenData = 2;
 // Quality of Serive for the publish event. Supported values : 0, 1, 2
 var QosLevel = 0;
 
+// Configure device information (needs to match the info when this device was
+// registered in the IBM IoT Foundation service!)
+
+// read the id of the IoT foundation org out of a local .env file
+// format of .env file:
+// iotf_org=<id of IoT Foundation organization>
+require('dotenv').load();
+
+var iotfConfig = {
+    "org" : process.env.iotf_org, 
+    "id" : "my-device-simulator",
+    "auth-token" : "mydevicesimulatortoken",
+    "type" : "device-simulator",
+    "auth-method" : "token"
+};
+
+
 //------------------------------------------------------------------------------
 // Setup all the required node modules we'll need
 //------------------------------------------------------------------------------
@@ -41,25 +58,6 @@ app.listen(appEnv.port, function(){
 });
 
 
-//---Get IoT Foundation Configuration and Crendentials--------------------------
-
-// read the id of the IoT foundation org out of a local .env file
-// format of .env file:
-// iotf_org=<id of IoT Foundation organization>
-//
-// else you can set the iotf_org variable below to your org directly in the code
-require('dotenv').load();
-var iotf_org = process.env.iotf_org;
-
-var iotfConfig = {
-    "org" : iotf_org,
-    "id" : "my-device-simulator",
-    "auth-token" : "mydevicesimulatortoken",
-    "type" : "device-simulator",
-    "auth-method" : "token"
-};
-
-
 //---Connect to the IoT Foundation service--------------------------------------
 
 console.log('---DEBUG iotConfig:---');
@@ -73,8 +71,7 @@ iotf.connect();
 
 iotf.on("connect", function () {
     console.log("Device simulator is connected to the IoT Foundation service");
-    var myQosLevel = QosLevel;
-    console.log("QoS level set to: " + myQosLevel);
+    console.log("QoS level set to: " + QosLevel);
 
     // inital data packet to be emitted as a JSON object
     var dataPacket = {
