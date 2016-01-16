@@ -21,9 +21,6 @@ var express = require('express');
 // Initialize the app as an express application
 var app = express();
 
-//---Use the async module to loop forever---------------------------------------
-var async = require("async");
-
 //---The ibmiotf package simplifies intractions with the IoT Foundation Service-
 var Iotf = require("ibmiotf");
 
@@ -92,6 +89,10 @@ iotf.on("connect", function () {
 
     setInterval(function(){
 
+        // add a time stamp to the data packet
+        var date = new Date();
+        dataPacket.ts = date.toISOString();
+
         // convert the data packet into a string and then publish it
         iotf.publish("status","json", JSON.stringify(dataPacket) );
 
@@ -118,42 +119,4 @@ iotf.on("connect", function () {
 
     }, varIntervalBetweenData*1000);
 
-/*
-    async.forever(
-    function(next) {
-
-        // convert the data packet into a string and then publish it
-        iotf.publish("status","json", JSON.stringify(dataPacket) );
-
-        //
-        // increment temperature up to 100 then back down to 0
-        //
-        if (dataPacket.d.temperature === 0) {
-            countingUp = true;
-            temperatureIncrement = 1;
-        } else if (dataPacket.d.temperature === 100) {
-            countingUp = false;
-            temperatureIncrementincrement = -1;
-        }
-        dataPacket.d.temperature = dataPacket.d.temperature + temperatureIncrement;
-
-        //
-        // increment the pressure until 100 and start again at 0
-        //
-        pressureIncrement = 2;
-        if (dataPacket.d.pressure === 100) {
-            dataPacket.d.pressure = 0;
-        }
-        dataPacket.d.pressure = dataPacket.d.pressure + pressureIncrement;
-
-
-        //Repeat after 2 seconds
-        setTimeout(function() {
-            next();
-        }, varIntervalBetweenData*1000);
-    },
-    function(err) {}
-    );
-
-    */
 });

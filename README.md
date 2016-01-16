@@ -4,10 +4,12 @@ What if you're building or testing Internet of Things (IoT) solutions based on t
 
 This is a heavily commented node.js application, that acts as a "fake device", connects to the IBM IoT Foundation service and emits data. The emitted data can easily be controlled via a few lines of code.
 
+For a full specification of the payload, see the IBM IoT Foundation docs, specifically the [Messaging section][iotf_messaging_doc].
+
 
 ### Registering the simulator in the IoT Foundation service
 
-**Note** that this simulated device **can only connect to your instance of the IoT Foundation service if it has been registered**. This can either be done via the IoT Foundation dashboard or [its API][iotf_api].
+**Note** that this simulated device **can only connect to your instance of the IoT Foundation service if it has been registered**. This can either be done via the [IoT Foundation dashboard][iotf_dashboard_doc] or [its API][iotf_api].
 
 
 ## Running the application locally
@@ -47,4 +49,6 @@ Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
 [iotf_url]: https://console.ng.bluemix.net/catalog/services/internet-of-things-foundation
 [sign_up]: https://console.ng.bluemix.net/registration/
 [cloud_foundry]: https://github.com/cloudfoundry/cli
-[iotf_api]:https://developer.ibm.com/iotfoundation/recipes/api-documentation/
+[iotf_api]: https://developer.ibm.com/iotfoundation/recipes/api-documentation/
+[iotf_dashboard_doc]: https://www.ng.bluemix.net/docs/services/IoT/index.html#iot170
+[iotf_messaging_doc]: https://docs.internetofthings.ibmcloud.com/messaging/payload.html
