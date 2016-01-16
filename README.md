@@ -17,9 +17,8 @@ This is a heavily commented node.js application, that acts as a "fake device", c
 2. Install [Node.js](http://nodejs.org/)
 3. Go to the project folder in the terminal and run:
     `npm install`
-4. Add a .env file with the name of the IoT Foundation org you would like to connect to:
-    ``echo "<iotFoundationOrgNameGoesHere>" > .env``
-   Or (alternatively) add the name of the org directly in the code (app.js file)
+4. Generate an .env file, containing the name of the IoT Foundation org you would like to connect to:
+``echo "<iotFoundationOrgNameGoesHere>" > .env`` (or add the name of the org directly in the code in the app.js file)
 5. Start the application
 6.  `node app.js`
 
