@@ -4,7 +4,6 @@ What if you're building or testing Internet of Things (IoT) solutions based on t
 
 This is a heavily commented node.js application, that acts as a "fake device", connects to the IBM IoT Foundation service and emits data. The emitted data can easily be controlled via a few lines of code.
 
-The code can be run locally on your development machine or can easily be pushed to IBM's Cloud Foundry based [Bluemix][bluemix_url] platform.
 
 ## Registering the simulator in the IoT Foundation service
 
@@ -17,49 +16,22 @@ The code can be run locally on your development machine or can easily be pushed 
 2. Install [Node.js](http://nodejs.org/)
 3. Go to the project folder in the terminal and run:
     `npm install`
-4. Start the application
-5.  `node app.js`
-
-# Deploying and running the application on Bluemix
-
-Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
-
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/uwefassnacht/device-simulator-for-ibm-iot)
+4. Add a .env file with the name of the IoT Foundation org you would like to connect to:
+    ``<iotFoundationOrgNameGoesHere>``
+   Or (alternatively) add the name of the org directly in the code (app.js file)
+5. Start the application
+6.  `node app.js`
 
 
-## Getting Started
+# Next features / help wanted
 
-1. Create a Bluemix Account
+- [ ] Add web interface
+  - [ ] Allow entry of IoT Foundation org via web interface
+  - [ ] Display status of app (# of messages, topics, data packets, ...) via web interface
 
-  [Sign up][sign_up] for Bluemix, or use an existing account. Bluemix is free tor try.
+- [ ] Simulate multiple devices in parallel
 
-2. Download and install the [Cloud-foundry CLI][cloud_foundry] tool
-
-3. Edit the `manifest.yml` file and change the `<application-name>` to something unique.
-
-  The name you use will determinate your application url initially, e.g. `<application-name>.mybluemix.net`.
-
-4. Connect to Bluemix in the command line tool
-  ```sh
-  $ cf api https://api.ng.bluemix.net
-  $ cf login -u <your user ID>
-  ```
-
-5. Push it live!
-
-  ```sh
-  $ cf push
-  ```
-
-See the full [Getting Started][getting_started] documentation for more details, including code snippets and references.
-
-## Troubleshooting
-
-To troubleshoot your Bluemix app the sources of information are the logs, to see them, run:
-
-  ```sh
-  $ cf logs <application-name> --recent
-  ```
+- [ ] Make app deployable to Bluemix via "Deploy to Bluemix button"
 
 
 # License
