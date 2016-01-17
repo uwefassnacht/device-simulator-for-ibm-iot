@@ -11,6 +11,13 @@ For a full specification of the payload, see the IBM IoT Foundation docs, specif
 
 **Note** that this simulated device **can only connect to your instance of the IoT Foundation service if it has been registered**. This can either be done via the [IoT Foundation dashboard][iotf_dashboard_doc] or [its API][iotf_api].
 
+Make sure to use the following information when registering this app as device:
+
+    Device ID : "my-device-simulator"
+    Device Token: "mydevicesimulatortoken"
+    Device Type : "device-simulator"
+    Device Authentication method : "token"
+
 
 ## Running the application locally
 
