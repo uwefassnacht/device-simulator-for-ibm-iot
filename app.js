@@ -11,16 +11,18 @@ var varIntervalBetweenData = 2;
 // Quality of Serive for the publish event. Supported values : 0, 1, 2
 var QosLevel = 0;
 
-// Configure device information (needs to match the info when this device was
-// registered in the IBM IoT Foundation service!)
-
 // read the id of the IoT foundation org out of a local .env file
 // format of .env file:
 // iotf_org=<id of IoT Foundation organization>
 require('dotenv').load();
 
+// Note that the following configuration must match with the parameters that
+// the device-simulator was registered with. This device registration can
+// either be done in the dashboard of the IoT Foundation service or via its
+// API
+
 var iotfConfig = {
-    "org" : process.env.iotf_org, 
+    "org" : process.env.iotf_org,
     "id" : "my-device-simulator",
     "auth-token" : "mydevicesimulatortoken",
     "type" : "device-simulator",
@@ -47,29 +49,51 @@ var cfenv = require('cfenv');
 // get the application environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 
-console.log('---DEBUG appENV:---');
+console.log('');
+console.log('--- DEBUG appENV: ---');
 console.log(appEnv);
+console.log('');
 
 
-//---Start server---------------------------------------------------------------
+//---Start the express server---------------------------------------------------
 
-app.listen(appEnv.port, function(){
-    console.log("Server started on " + appEnv.url);
+ app.listen(appEnv.port, function() {
+     console.log("Server started on " + appEnv.url);
+  }).on('error', function(err) {
+    if (err.errno === 'EADDRINUSE') {
+        console.log('Server not started, port ' + appEnv.url + ' is busy');
+    } else {
+        console.log(err);
+    }
 });
 
 
 //---Connect to the IoT Foundation service--------------------------------------
 
-console.log('---DEBUG iotConfig:---');
+console.log('');
+console.log('--- DEBUG iotConfig: ---');
 console.log(iotfConfig);
+console.log('');
 
-// Initialize the iotf library with my config
-var iotf = new Iotf.IotfDevice(iotfConfig);
+// Create a client (used to send data)
+var iotfClient = new Iotf.IotfDevice(iotfConfig);
 
 // Connect to the initialized iotf service
-iotf.connect();
+iotfClient.connect();
 
-iotf.on("connect", function () {
+// Handle errors coming from the iotf service
+iotfClient.on("error", function (err) {
+    // console.log("Error received while connecting to IoTF service: " + err.message);
+    if (err.message.indexOf('authorized') > -1) {
+        console.log('');
+        console.log("Make sure the device-simulator is registered in the IotF org with the following configuration:")
+        console.log(iotfConfig);
+        console.log('');
+    }
+    process.exit( );
+});
+
+iotfClient.on("connect", function () {
     console.log("Device simulator is connected to the IoT Foundation service");
     console.log("QoS level set to: " + QosLevel);
 
@@ -91,7 +115,7 @@ iotf.on("connect", function () {
         dataPacket.ts = date.toISOString();
 
         // convert the data packet into a string and then publish it
-        iotf.publish("status","json", JSON.stringify(dataPacket) );
+        iotfClient.publish("status","json", JSON.stringify(dataPacket) );
 
         //
         // increment temperature up to 100 then back down to 0
