@@ -24,11 +24,11 @@ Make sure to use the following information when registering this app as device:
   The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
 
 2. Install [Node.js](http://nodejs.org/)
-3. Go to the project folder in the terminal and run:
+3. Go to the project folder in the terminal and install the required npm modules:  
     `npm install`
 4. Generate an .env file with the name of the IoT Foundation organization, that you would like to connect to:  
     ``echo "<iotFoundationOrgNameGoesHere>" > .env``
-5. Start the application  
+5. Start the application:  
     `node app.js`
 
 
