@@ -27,7 +27,7 @@ Make sure to use the following information when registering this app as device:
 3. Go to the project folder in the terminal and run:
     `npm install`
 4. Generate an .env file with the name of the IoT Foundation organization, that you would like to connect to:
-``echo "<iotFoundationOrgNameGoesHere>" > .env``
+    ``echo "<iotFoundationOrgNameGoesHere>" > .env``
 5. Start the application
 6.  `node app.js`
 
