@@ -125,7 +125,7 @@ iotfClient.on("connect", function () {
             temperatureIncrement = 1;
         } else if (dataPacket.d.temperature === 100) {
             countingUp = false;
-            temperatureIncrementincrement = -1;
+            temperatureIncrement = -1;
         }
         dataPacket.d.temperature = dataPacket.d.temperature + temperatureIncrement;
 
