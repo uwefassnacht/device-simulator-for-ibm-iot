@@ -23,9 +23,9 @@ require('dotenv').load();
 
 var iotfConfig = {
     "org" : process.env.iotf_org,
-    "id" : "my-device-simulator",
-    "auth-token" : "mydevicesimulatortoken",
-    "type" : "device-simulator",
+    "id" : process.env.iotf_id,
+    "auth-token" : process.env.iotf_authtoken,
+    "type" : process.env.iotf_type,
     "auth-method" : "token"
 };
 
