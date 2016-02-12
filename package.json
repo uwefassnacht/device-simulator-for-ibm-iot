@@ -5,8 +5,8 @@
   "description": "A small utility that acts a sensor and sends data into the IBM IoT Foundation service. Very useful for debugging and demoing Internet of Things (IoT) solutions built on IBM Bluemix",
   "license": "Apache License, Version 2.0",
   "dependencies": {
-    "cfenv": "^1.0.3",
-    "dotenv": "^1.2.0",
+    "cfenv": "^1.0.0",
+    "dotenv": "^2.0.0",
     "express": "^4.13.3",
     "ibmiotf": "^0.2.2"
   },

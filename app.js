@@ -1,3 +1,22 @@
+/**
+ * Copyright 2016 IBM Corp. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// Use sctrict mode
+'use strict';
+
 //------------------------------------------------------------------------------
 // Change variable values in this section to customize emitted data
 //------------------------------------------------------------------------------
@@ -116,23 +135,25 @@ iotfClient.on("connect", function () {
 
         // convert the data packet into a string and then publish it
         iotfClient.publish("status","json", JSON.stringify(dataPacket) );
+        // log out the emitted dataPacket
+        console.log(JSON.stringify(dataPacket));
 
         //
         // increment temperature up to 100 then back down to 0
         //
         if (dataPacket.d.temperature === 0) {
-            countingUp = true;
-            temperatureIncrement = 2;
+            var countingUp = true;
+            var temperatureIncrement = 2;
         } else if (dataPacket.d.temperature === 100) {
-            countingUp = false;
-            temperatureIncrement = -2;
+            var countingUp = false;
+            var temperatureIncrement = -2;
         }
         dataPacket.d.temperature = dataPacket.d.temperature + temperatureIncrement;
 
         //
         // increment the pressure until 100 and start again at 0
         //
-        pressureIncrement = 2;
+        var pressureIncrement = 2;
         if (dataPacket.d.pressure === 100) {
             dataPacket.d.pressure = 0;
         }
