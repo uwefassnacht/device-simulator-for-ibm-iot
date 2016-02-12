@@ -12,30 +12,31 @@ For a full specification of the payload, see the IBM IoT Foundation docs, specif
 **Note** that this simulated device **can only connect to your instance of the IoT Foundation service if it has been registered**. This can either be done via the [IoT Foundation dashboard][iotf_dashboard_doc] or [its API][iotf_api].
 
 Make sure to use the following information when registering this app as device:
-
+    ```
     Device ID : "my-device-simulator"
     Device Token: "mydevicesimulatortoken"
     Device Type : "device-simulator"
     Device Authentication method : "token"
-
+    ```
 
 ## Running the application locally
 
-  The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
+The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.com/) so you will have to download and install them as part of the steps below.
 
-2. Install [Node.js](http://nodejs.org/)
-3. Go to the project folder in the terminal and install the required npm modules:  
+1. Install [Node.js](http://nodejs.org/)
+
+2. Go to the project folder in the terminal and install the required npm modules:  
     `npm install`
-4. Generate an .env file containing the information that you used to register the device simulator in your IoT Foundation organization:
 
+3. Generate an .env file containing the information that you used to register the device simulator in your IoT Foundation organization:
     ```
     iotf_org=<myOrg>
     iotf_type=<myDeviceType>
-    iotf_id=<myId>
+    iotf_id=<myId>‚
     iotf_authtoken=<myAuthToken>
     ```
 
-5. Start the application:  
+4. Start the application:  
     `node app.js`
 
 
