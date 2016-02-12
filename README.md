@@ -26,8 +26,15 @@ Make sure to use the following information when registering this app as device:
 2. Install [Node.js](http://nodejs.org/)
 3. Go to the project folder in the terminal and install the required npm modules:  
     `npm install`
-4. Generate an .env file with the name of the IoT Foundation organization, that you would like to connect to:  
-    ``echo "<iotFoundationOrgNameGoesHere>" > .env``
+4. Generate an .env file containing the information that you used to register the device simulator in your IoT Foundation organization:
+
+    ```
+    iotf_org=<myOrg>
+    iotf_type=<myDeviceType>
+    iotf_id=<myId>
+    iotf_authtoken=<myAuthToken>
+    ```
+
 5. Start the application:  
     `node app.js`
 
