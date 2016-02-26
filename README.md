@@ -7,7 +7,7 @@ This is a heavily commented node.js application, that acts as a "fake device", c
 For a full specification of the payload, see the IBM IoT Platform docs, specifically the [MQTT Connectivity for Devices section][iotf_messaging_doc].
 
 
-### Registering the simulator in the IoT Foundation service
+### Registering the simulator in the IBM IoT Platform service
 
 **Note** that this simulated device **can only connect to your instance of the IBM IoT Platform service if it has been registered**. This can either be done via the [IoT Platform dashboard][iotf_dashboard_doc] or [its API][iotf_api].
 
@@ -27,7 +27,7 @@ The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.c
 2. Go to the project folder in the terminal and install the required npm modules:  
     `npm install`
 
-3. Generate an .env file containing the information that you used to register the device simulator in your IoT Foundation organization:
+3. Generate an .env file containing the information that you used to register the device simulator in your IoT Platform organization:
     ```
     iotf_org=<myOrg>
     iotf_type=<myDeviceType>
